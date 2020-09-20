@@ -1,3 +1,9 @@
+;==========================================
+; Title:  Employee evaluation system
+; Author: Akash Singh
+; Date:   20 Sep 2020
+;========================================
+
 import pyautogui
 from tkinter import *
 from threading import Thread
