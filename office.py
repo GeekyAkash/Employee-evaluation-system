@@ -23,7 +23,7 @@ cloudinary.config(
 
 def takeScreenshot():
     myScreenshot = pyautogui.screenshot()
-    myScreenshot.save(r'static/Screenshot/{}.png'.format(time.strftime("%d-%m-%Y %H:%M")))
+    myScreenshot.save(r'static/Screenshot/{}.png'.format(time.strftime("%d %B %Y %H:%M %p")))
     cloudinary.uploader.upload('static/Screenshot/{}.png'.format(time.strftime("%d-%m-%Y %H:%M")),
                                public_id='{}'.format(time.strftime("%d-%m-%Y %H:%M")),
                                folder="Akash/screenshot/")
@@ -39,7 +39,7 @@ def video_cap():
             ret, frame = videoCaptureObject.read()
             user_frame = frame
 
-        cv2.imwrite("static/user_image/{}.jpg".format(time.strftime("%d-%m-%Y %H:%M")), user_frame)
+        cv2.imwrite("static/user_image/{}.jpg".format(time.strftime("%d %B %Y %H:%M %p")), user_frame)
         cloudinary.uploader.upload('static/user_image/{}.jpg'.format(time.strftime("%d-%m-%Y %H:%M")),
                                    public_id='{}'.format(time.strftime("%d-%m-%Y %H:%M")),
                                    folder="Akash/user_photo/")
